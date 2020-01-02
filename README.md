@@ -1,2 +1,3 @@
-# notelang
-Music Development Language
+# libnote
+
+Music SDK.
