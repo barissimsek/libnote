@@ -11,15 +11,11 @@ t2 = s.track("drum", 8, 12)
 b1 = t1.bar()
 b2 = t1.bar()
 
-bend = '{"form": "1", "range": "2" }'
+bend = '{"root": "C", "form": "1", "range": "2" }'
 slide = '{"range": "4"}'
 
-n1 = b1.note('bend', bend)
-n2 = b1.note('slide', slide)
+b1.sound('bend', bend)
+b1.sound('slide', slide)
 
-# print(vars(n1))
-
-# print(b1.notes)
-
-print(n2)
-
+print(b1.sounds[0])
+print(b1.sounds[1])

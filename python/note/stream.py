@@ -1,6 +1,6 @@
 """This is the stream module.
 
-This module describes a music stream and related data types and objects.
+This module describes a music stream and related data structures and objects.
 
 A stream is a data structure that can describe a music from beginning to end.
 It's consist of parallel playing tracks. 
@@ -9,6 +9,14 @@ It's consist of parallel playing tracks.
 __author__ = 'Baris Simsek'
 
 class _note():
+    def __init__(self, root, octave):
+        self.root = root
+        self.octave = octave
+
+    def __str__(self):
+        return "root: {}\noctave: {}".format(self.root, self.octave)
+
+class _sound():
     def __init__(self, t, payload):
         self.type = t
         self.payload = payload
@@ -18,14 +26,14 @@ class _note():
 
 class _bar:
     def __init__(self):
-        self.notes = []
+        self.sounds = []
 
     def __str__(self):
-        return "notes: {}".format(self.notes)
+        return "sounds: {}".format(self.sounds)
 
-    def note(self, t, *args):
-        self.notes.append(_note(t, args))
-        return self.notes[-1]
+    def sound(self, t, *args):
+        self.sounds.append(_sound(t, args))
+        return self.sounds[-1]
 
 class _track:
 
