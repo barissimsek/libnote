@@ -16,9 +16,26 @@ class _note():
     def __str__(self):
         return "root: {}\noctave: {}".format(self.root, self.octave)
 
+class _pick():
+    def __init__(self, note):
+        self.note = note
+
+    def __str__(self):
+        return "note: {}".format(self.note)
+
+class _bend():
+    def __init__(self, range, note):
+        self.range = range
+        self.note = note
+
+class _slide():
+    def __init__(self, range, note):
+        self.range = range
+        self.note = note
+
 class _sound():
     def __init__(self, t, payload):
-        self.type = t
+        self.type = t   # pick, slide, bend
         self.payload = payload
 
     def __str__(self):
